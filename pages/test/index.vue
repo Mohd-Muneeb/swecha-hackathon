@@ -1,14 +1,16 @@
 <template>
-  <div class="">
-    <h1 class="text-subtitle-1">hello</h1>
-  </div>
+  <h1>{{ message }}</h1>
 </template>
 
 <script>
 export default {
-  name: "test-index",
+  data() {
+    return {
+      message: "Hello World!",
+    };
+  },
   mounted() {
-    // this.locatorButtonPressed();
+    this.locatorButtonPressed();
   },
   methods: {
     locatorButtonPressed() {
@@ -25,5 +27,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
