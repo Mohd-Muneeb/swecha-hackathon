@@ -17,8 +17,6 @@ export default {
     locatorButtonPressed() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(position.coords.latitude);
-          console.log(position.coords.longitude);
           this.loc.lat = String(position.coords.latitude).slice(0, 6);
           this.loc.long = String(position.coords.longitude).slice(0, 6);
           this.locateNearByPlaces();
