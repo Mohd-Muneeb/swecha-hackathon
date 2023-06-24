@@ -1,6 +1,23 @@
 <template>
   <div class="test-index">
+    <h3>Checkout these awesome attractions in the city!</h3>
+    <div class="known-places-container">
+      <div v-for="(place, index) in knownPlaces" :key="index">
+        <Card :place="place.Name" />
+      </div>
+    </div>
+
     <button @click="locatorButtonPressed">find locations</button>
+    <div class="places-container">
+      <div
+        v-if="places"
+        class="cards"
+        v-for="(place, index) in places"
+        :key="index"
+      >
+        <Card :place="place.properties.name" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,9 +27,13 @@ export default {
     return {
       message: "Hello World!",
       loc: {},
+      places: [],
+      knownPlaces: [],
     };
   },
-  mounted() {},
+  mounted() {
+    this.populateKnownPlaces();
+  },
   methods: {
     locatorButtonPressed() {
       navigator.geolocation.getCurrentPosition(
@@ -40,11 +61,27 @@ export default {
         requestOptions
       )
         .then((response) => response.json())
-        .then((result) => console.log(result))
+        .then((result) => (this.places = result.features))
+        .catch((error) => console.log("error", error));
+    },
+    populateKnownPlaces() {
+      var requestOptions = {
+        method: "GET",
+      };
+
+      fetch(`/assets/json/places.json`, requestOptions)
+        .then((response) => response.json())
+        .then((result) => (this.knownPlaces = result))
         .catch((error) => console.log("error", error));
     },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.places-container,
+.known-places-container {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
