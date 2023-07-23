@@ -1,5 +1,5 @@
 <template>
-	<div class="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
+	<div class="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4 bg-slate-200">
 		<!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
 		<div
 			class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4"
@@ -189,7 +189,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-10 lg:hidden">
+		<div class="mt-10 lg:hidden bg-slate-200">
 			<label
 				class="text-xl font-medium leading-5 text-gray-800"
 				>Get updates</label
