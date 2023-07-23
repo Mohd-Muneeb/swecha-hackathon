@@ -23,8 +23,8 @@
 						Find Locations
 					</button>
 				</div>
-				<div class="places-container">
-					<div v-if="places" class="flex flex-wrap">
+				<div class="known-places-container">
+					<div v-if="places" class="flex flex-wrap gap-12">
 						<div
 							class=" "
 							v-for="(place, index) in places"
