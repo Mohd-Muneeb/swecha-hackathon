@@ -5,7 +5,7 @@
     <div class="container">
       <nav class="site-navbar">
         <!-- site logo -->
-        <a href="#home" class="site-logo">Hyderabad Tourism</a>
+        <a href="#home" class="site-logo" :on-click="togglerClick">Hyderabad Tourism</a>
 
         <!-- site menu/nav -->
         <ul>
@@ -27,31 +27,31 @@
 
 <script>
 // define all UI variable
-const navToggler = document.querySelector('.nav-toggler');
-const navMenu = document.querySelector('.site-navbar ul');
-const navLinks = document.querySelectorAll('.site-navbar a');
+// const navToggler = document.querySelector('.nav-toggler');
+// const navMenu = document.querySelector('.site-navbar ul');
+// const navLinks = document.querySelectorAll('.site-navbar a');
 
 export default {
   mounted() {
     // load all event listners
-    allEventListners();
+    // allEventListners();
   },
   methods: {
     // functions of all event listners
-    allEventListners() {
-      // toggler icon click event
-      navToggler.addEventListener('click', togglerClick);
-      // nav links click event
-      navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
-    },
+    // allEventListners() {
+    //   // toggler icon click event
+    //   navToggler.addEventListener('click', togglerClick);
+    //   // nav links click event
+    //   navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
+    // },
 
-    // togglerClick function
+    // // togglerClick function
     togglerClick() {
       navToggler.classList.toggle('toggler-open');
       navMenu.classList.toggle('open');
     },
 
-    // navLinkClick function
+    // // navLinkClick function
     navLinkClick() {
       if(navMenu.classList.contains('open')) {
         navToggler.click();
