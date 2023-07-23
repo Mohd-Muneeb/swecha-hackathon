@@ -3,7 +3,7 @@
 		">
 			<Navbar></Navbar>
 			<div class="px-8">
-				<h3 class="w-full h-12 text-3xl text-[#121212] p-4">
+				<h3 class="w-fit mx-auto h-12 text-3xl text-[#121212] font-semibold p-4">
 					{{ message }}
 				</h3>
 				<hr class="my-2" />
@@ -26,7 +26,7 @@
 				<div class="known-places-container">
 					<div v-if="places" class="flex flex-wrap gap-12">
 						<div
-							class="cards flex flex-wrap  "
+							class=" "
 							v-for="(place, index) in places"
 							:key="index"
 						>
