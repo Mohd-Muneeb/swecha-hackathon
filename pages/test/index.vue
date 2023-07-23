@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-<template>
-	<div class="test-index">
-		<h3>Welcome to Hyderabad!!!</h3>
-		<div class="known-places-container">
-			<div v-for="(place, index) in knownPlaces" :key="index">
-				<Card :place="place.Name" />
-			</div>
-		</div>
-
-		<button @click="locatorButtonPressed">find locations</button>
-		<div class="places-container">
-			<div v-if="places">
-				<div
-					class="cards"
-					v-for="(place, index) in places"
-					:key="index"
-				>
-					<Card :place="place.properties.name" />
-=======
 	<template>
 		<div class="test-index  bg-slate-200
 		">
@@ -58,7 +38,6 @@
 							/>
 						</div>
 					</div>
->>>>>>> 5f78d3b52ff6aceb05329fc3a3f06b08279cb345
 				</div>
 			</div>
 
