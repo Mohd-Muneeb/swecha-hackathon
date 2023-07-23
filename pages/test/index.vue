@@ -26,7 +26,7 @@
 				<div class="places-container">
 					<div v-if="places" class="flex flex-wrap">
 						<div
-							class="cards"
+							class=" "
 							v-for="(place, index) in places"
 							:key="index"
 						>
