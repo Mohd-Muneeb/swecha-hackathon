@@ -1,12 +1,13 @@
 <template>
 	<div class="test-index">
-		<h3>{{ message }}</h3>
-		<!-- <div class="known-places-container">
-			<div v-for="(place, index) in places" :key="index">
+		<h3>Checkout these awesome attractions in the city!</h3>
+		<div class="known-places-container">
+			<div v-for="(place, index) in knownPlaces" :key="index">
 				<Card :place="place.Name" />
 			</div>
-		</div> -->
+		</div>
 
+		<button @click="locatorButtonPressed">find locations</button>
 		<div class="places-container">
 			<div v-if="places">
 				<div
@@ -14,11 +15,8 @@
 					v-for="(place, index) in places"
 					:key="index"
 				>
-					<Card :place="place.properties.name" :image="place.properties" :location="place.properties" />
+					<Card :place="place.properties.name" />
 				</div>
-			</div>
-			<div v-else>
-				<h1>No places found</h1>
 			</div>
 		</div>
 	</div>
@@ -28,16 +26,14 @@
 export default {
 	data() {
 		return {
-			message: "Welcome to Hyderabad",
+			message: "Hello World!",
 			loc: {},
 			places: [],
 			knownPlaces: [],
 		};
 	},
 	mounted() {
-		// this.populateKnownPlaces();
-		this.locatorButtonPressed();
-		this.locateNearByPlaces();
+		this.populateKnownPlaces();
 	},
 	methods: {
 		locatorButtonPressed() {
@@ -57,6 +53,10 @@ export default {
 			);
 		},
 		locateNearByPlaces() {
+			//         service = new google.maps.places.PlacesService(map);
+			// service.nearbySearch(this.loc, callback);
+			// console.log(service)
+			//   console.log(this.$api);
 			var requestOptions = {
 				method: "GET",
 			};
@@ -66,10 +66,10 @@ export default {
 				requestOptions
 			)
 				.then((response) => response.json())
-				.then((result) => {
-					console.log(result);
-					this.places = result.features;
-				})
+				.then(
+					(result) =>
+						(this.places = result.features)
+				)
 				.catch((error) => console.log("error", error));
 		},
 		populateKnownPlaces() {
