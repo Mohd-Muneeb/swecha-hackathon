@@ -1,6 +1,6 @@
 <template>
 	<div class="test-index">
-		<h3>Checkout these awesome attractions in the city!</h3>
+		<h3>Welcome to Hyderabad!!!</h3>
 		<div class="known-places-container">
 			<div v-for="(place, index) in knownPlaces" :key="index">
 				<Card :place="place.Name" />
